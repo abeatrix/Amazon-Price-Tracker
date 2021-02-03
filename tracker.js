@@ -32,13 +32,13 @@ async function checkPrice(page) {
     })
 
     $('#priceblock_ourprice', html).each(function(){
-        let dollarPrice = $(this).text();
-        var currentPrice = Number(dollarPrice.replace(/[^0-9.-]+/g,""))
+        const dollarPrice = $(this).text();
+        const currentPrice = Number(dollarPrice.replace(/[^0-9.-]+/g,""))
 
-        $('#display').innerHTML=currentPrice;
+        console.log(productName+' is currently selling at'+dollarPrice)
 
         if (currentPrice <= wantedPrice){
-            console.log(productName+' is now $'+dollarPrice)
+            console.log(productName+' is now '+dollarPrice)
             sendNotification(currentPrice);
         }
     });
