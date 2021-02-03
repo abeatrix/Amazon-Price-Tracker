@@ -39,6 +39,7 @@ async function checkPrice(page) {
 
         if (currentPrice <= wantedPrice){
             console.log(productName+' is now $'+dollarPrice)
+            sendNotification(currentPrice);
         }
     });
 }
